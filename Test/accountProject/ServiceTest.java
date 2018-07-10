@@ -67,10 +67,6 @@ public class ServiceTest {
 		int samCount = service.getAccountCountByFirstName("Sam");
 		int johnCount = service.getAccountCountByFirstName("Jarad");
 		int anonCount = service.getAccountCountByFirstName("Anon");
-		
-		System.out.println("samcount"  + samCount);
-		System.out.println("johnCount " + johnCount);
-		System.out.println("anonCount" + anonCount);
 
 		assertEquals(samCount, 2);
 		assertEquals(johnCount, 1);

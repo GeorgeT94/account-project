@@ -41,13 +41,7 @@ public class Service {
 	}
 	
 	public int getAccountCountByFirstName(String firstName) {
-		int counter = 0;
-	    for (int accountNumber : accounts.keySet()) {
-	        if (accounts.get(accountNumber).getFirstName().equals(firstName)) {
-	          counter++;
-	        }
-	      }
-	      return counter;
+		return (int) accounts.values().stream().filter(v -> v.getFirstName().equals(firstName)).count();
 	} 
 }
  
