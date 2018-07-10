@@ -18,7 +18,7 @@ public class ServiceTest {
 	public static void setUp() {
 
 		account = new Account("Benny", "Wong", 1);
-		Account john = new Account("John", "Gordon", 2);
+		Account john = new Account("Jarad", "Haggard", 2);
 		Account george = new Account("George", "Timbrell", 3);
 		Account sam = new Account("Sam", "1", 4);
 		Account sam2 = new Account("Sam", "2", 5);
@@ -27,7 +27,7 @@ public class ServiceTest {
 		service.addAccount(account);
 		service.addAccount(john);
 		service.addAccount(george);
-		service.addAccount(sam2);
+		service.addAccount(sam);
 		service.addAccount(sam2);
 	}
 
@@ -65,9 +65,13 @@ public class ServiceTest {
 	@Test
 	public void getAccountCountByFirstNameTest() {
 		int samCount = service.getAccountCountByFirstName("Sam");
-		int johnCount = service.getAccountCountByFirstName("John");
+		int johnCount = service.getAccountCountByFirstName("Jarad");
 		int anonCount = service.getAccountCountByFirstName("Anon");
 		
+		System.out.println("samcount"  + samCount);
+		System.out.println("johnCount " + johnCount);
+		System.out.println("anonCount" + anonCount);
+
 		assertEquals(samCount, 2);
 		assertEquals(johnCount, 1);
 		assertEquals(anonCount, 0);

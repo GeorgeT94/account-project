@@ -39,5 +39,15 @@ public class Service {
 			throw new AccountBlockedException("this account has been blocked, you cannot access this account.");
 		}
 	}
+	
+	public int getAccountCountByFirstName(String firstName) {
+		int counter = 0;
+	    for (int accountNumber : accounts.keySet()) {
+	        if (accounts.get(accountNumber).getFirstName().equals(firstName)) {
+	          counter++;
+	        }
+	      }
+	      return counter;
+	} 
 }
  
