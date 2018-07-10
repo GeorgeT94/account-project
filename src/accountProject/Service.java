@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Service {
+
 	private Map<Integer, Account> accounts = new HashMap<Integer, Account>();
 	
 	public void addAccount(Account account){
@@ -13,6 +14,10 @@ public class Service {
 	public Account getAccountByNumber(int accountNumber) {
 		return accounts.get(accountNumber);
 		
+	}
+	
+	public Map<Integer, Account> getAccounts() {
+		return accounts;
 	}
 	
 }
