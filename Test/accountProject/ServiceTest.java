@@ -18,8 +18,17 @@ public class ServiceTest {
 	public static void setUp() {
 
 		account = new Account("Benny", "Wong", 1);
+		Account john = new Account("John", "Gordon", 2);
+		Account george = new Account("George", "Timbrell", 3);
+		Account sam = new Account("Sam", "1", 4);
+		Account sam2 = new Account("Sam", "2", 5);
+
 		service = new Service();
 		service.addAccount(account);
+		service.addAccount(john);
+		service.addAccount(george);
+		service.addAccount(sam2);
+		service.addAccount(sam2);
 	}
 
 	@Test
@@ -51,6 +60,17 @@ public class ServiceTest {
 		
 		exception.expect(AccountBlockedException.class);
 		service.searchAccounts();
+	}
+	
+	@Test
+	public void getAccountCountByFirstNameTest() {
+		int samCount = service.getAccountCountByFirstName("Sam");
+		int johnCount = service.getAccountCountByFirstName("John");
+		int anonCount = service.getAccountCountByFirstName("Anon");
+		
+		assertEquals(samCount, 2);
+		assertEquals(johnCount, 1);
+		assertEquals(anonCount, 0);
 	}
 	
 }
